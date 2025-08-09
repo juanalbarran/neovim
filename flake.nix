@@ -14,21 +14,21 @@
             overlayFlakeInputs = prev: final: {
                 nvim = neovim.packages.${system}.neovim;
             };
-            overlayNeovimCanaima = prev: final: {
-                neovimCanaima = import ./packages/neovim-canaima.nix {
+            overlayNeovimKukenan = prev: final: {
+                neovimKukenan = import ./packages/neovim-kukenan.nix {
                     pkgs = final;
                 };
             };
             pkgs = import nixpkgs {
                 system = system;
-                overlays = [ overlayFlakeInputs overlayNeovimCanaima ];
+                overlays = [ overlayFlakeInputs overlayNeovimKukenan ];
             };
         in
         {
-            packages.canaima = pkgs.neovimCanaima;
-            apps.canaima = {
+            packages.kukenan = pkgs.neovimKukenan;
+            apps.kukenan = {
                 type = "app";
-                program = "${pkgs.neovimCanaima}/bin/nvim";
+                program = "${pkgs.neovimKukenan}/bin/nvim";
             };
         }
     );
