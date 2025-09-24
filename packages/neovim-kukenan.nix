@@ -1,3 +1,4 @@
+# packages/neovim-kukenan.nix
 { pkgs }:
 let
     customRC = import ../config { inherit pkgs; };
