@@ -6,7 +6,9 @@ vim.o.relativenumber = true
 vim.o.cursorline = true
 
 -- clipboard
-vim.o.clipboard = "unnamedplus"
+vim.schedule(function()
+    vim.o.clipboard = "unnamedplus"
+end)
 
 -- indentation
 vim.o.smartindent = true
