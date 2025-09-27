@@ -45,6 +45,7 @@
 		longDescription = '' A Nixvim-based Neovim configuration tailored for Canaima NixOS. '';
 		license = pkgs.lib.licenses.mit;
 		platforms = pkgs.lib.platforms.all;
+		teams = { };
 	      };
 	    });
 	  };
