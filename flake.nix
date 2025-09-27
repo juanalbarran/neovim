@@ -38,10 +38,15 @@
             # Run `nix flake check .` to verify that your config is not broken
             default = nixvimLib.check.mkTestDerivationFromNixvimModule nixvimModule;
           };
-
-          packages = {
-            # Lets you run `nix run .` to start nixvim
-            default = nvim;
+	  packages = { # Lets you run `nix run .` to start nixvim 
+	    default = nvim.overrideAttrs (old: {
+	      meta = (old.meta or {}) // {
+	        description = "Kukenan Neovim configuration";
+		longDescription = '' A Nixvim-based Neovim configuration tailored for Canaima NixOS. '';
+		license = pkgs.lib.licenses.mit;
+		platforms = pkgs.lib.platforms.all;
+	      };
+	    });
 	  };
         };
   };
