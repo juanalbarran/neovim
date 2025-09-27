@@ -1,15 +1,19 @@
 # config/default.nix
-{ pkgs }:
-let
-  luaFiles = [
-    ./nvim-0-init.lua
-    ./nvim-keybinds.lua
-    ./nvim-options.lua
+{
+  imports = [
+    ./plugins/oil.nix
+    ./plugins/lualine.nix
+    ./plugins/fzf-lua.nix
+    ./plugins/treesitter.nix
+    ./plugins/autopairs.nix
+    ./plugins/noice.nix
+    ./plugins/conform.nix
+    ./plugins/which-key.nix
+    ./plugins/tabout.nix
+    ./plugins/blink-cmp.nix
+
+    ./options.nix
+    ./keymaps.nix
+    ./colorschemes.nix
   ];
-
-  # For each file in the list, create the full "luafile <path>" command.
-  sourceCmds = pkgs.lib.lists.map (file: "luafile " + toString file) luaFiles;
-
-in
-# Join all the commands into a single string, separated by newlines.
-pkgs.lib.strings.concatStringsSep "\n" sourceCmds
+}
