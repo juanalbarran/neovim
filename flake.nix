@@ -1,36 +1,48 @@
 # flake.nix
 {
-    description = "My neovim flake";
-    inputs = {
-        nixpkgs.url = "github:NixOS/nixpkgs";
-        flake-utils.url = "github:numtide/flake-utils";
-        neovim = {
-            url = "github:nix-community/neovim-nightly-overlay";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
-    };
-    outputs = { self, nixpkgs, neovim, flake-utils }: 
-        flake-utils.lib.eachDefaultSystem (system:
+  description = "A nixvim configuration";
+
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    nixvim.url = "github:nix-community/nixvim";
+    flake-parts.url = "github:hercules-ci/flake-parts";
+  };
+
+  outputs =
+    { nixvim, flake-parts, ... }@inputs:
+    flake-parts.lib.mkFlake { inherit inputs; } {
+      systems = [
+        "x86_64-linux"
+        "aarch64-linux"
+        "x86_64-darwin"
+        "aarch64-darwin"
+      ];
+
+      perSystem =
+        { system, ... }:
         let
-            overlayFlakeInputs = prev: final: {
-                nvim = neovim.packages.${system}.neovim;
+          nixvimLib = nixvim.lib.${system};
+          nixvim' = nixvim.legacyPackages.${system};
+          nixvimModule = {
+            inherit system; # or alternatively, set `pkgs`
+            module = import ./config; # import the module directly
+            # You can use `extraSpecialArgs` to pass additional arguments to your module files
+            extraSpecialArgs = {
+              # inherit (inputs) foo;
             };
-            overlayNeovimKukenan = prev: final: {
-                neovimKukenan = import ./packages/neovim-kukenan.nix {
-                    pkgs = final;
-                };
-            };
-            pkgs = import nixpkgs {
-                system = system;
-                overlays = [ overlayFlakeInputs overlayNeovimKukenan ];
-            };
+          };
+          nvim = nixvim'.makeNixvimWithModule nixvimModule;
         in
         {
-            packages.kukenan = pkgs.neovimKukenan;
-            apps.kukenan = {
-                type = "app";
-                program = "${pkgs.neovimKukenan}/bin/nvim";
-            };
-        }
-    );
+          checks = {
+            # Run `nix flake check .` to verify that your config is not broken
+            default = nixvimLib.check.mkTestDerivationFromNixvimModule nixvimModule;
+          };
+
+          packages = {
+            # Lets you run `nix run .` to start nixvim
+            default = nvim;
+          };
+        };
+    };
 }
