@@ -1,9 +1,10 @@
+# flake.nix
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nvf.url = "github:notashelf/nvf";
   };
-  outputs = { self, nixkgs, nvf, ... }: {
+  outputs = { self, nixpkgs, nvf, ... }: {
     
     packages."x86_64-linux".kukenan =
       (nvf.lib.neovimConfiguration {
