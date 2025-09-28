@@ -41,7 +41,7 @@
 	  packages = { # Lets you run `nix run .` to start nixvim 
 	    default = nvim.overrideAttrs (old: {
 	      lua = pkgs.lua;
-	      postBuild = (old.postBuild or "") + ''
+	      preFixup = (old.preFixup or "") + ''
       		rm -f $out/bin/nvim-python3
       		rm -f $out/bin/nvim-ruby
       		rm -f $out/bin/nvim-node
