@@ -28,7 +28,7 @@
             module = import ./config; # import the module directly
             # You can use `extraSpecialArgs` to pass additional arguments to your module files
             extraSpecialArgs = {
-              inherit (inputs) foo;
+              #inherit (inputs) foo;
             };
           };
           nvim = nixvim'.makeNixvimWithModule nixvimModule;
@@ -41,7 +41,7 @@
 	  packages = { # Lets you run `nix run .` to start nixvim 
 	    default = nvim.overrideAttrs (old: {
 	      lua = pkgs.lua;
-	      postInstall = (old.postInstall or "") + ''
+	      postBuild = (old.postBuild or "") + ''
       		rm -f $out/bin/nvim-python3
       		rm -f $out/bin/nvim-ruby
       		rm -f $out/bin/nvim-node
