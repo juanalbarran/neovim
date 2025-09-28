@@ -41,6 +41,11 @@
 	  packages = { # Lets you run `nix run .` to start nixvim 
 	    default = nvim.overrideAttrs (old: {
 	      lua = pkgs.lua;
+	      postInstall = (old.postInstall or "") + ''
+      		rm -f $out/bin/nvim-python3
+      		rm -f $out/bin/nvim-ruby
+      		rm -f $out/bin/nvim-node
+	      '';
 	      meta = (old.meta or {}) // {
 	        description = "Kukenan Neovim configuration";
 		longDescription = '' A Nixvim-based Neovim configuration tailored for Canaima NixOS. '';
