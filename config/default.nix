@@ -11,6 +11,7 @@
     ./plugins/which-key.nix
     ./plugins/tabout.nix
     ./plugins/blink-cmp.nix
+    ./plugins/others.nix
 
     ./options.nix
     ./keymaps.nix
