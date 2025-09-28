@@ -16,5 +16,6 @@
     ./options.nix
     ./keymaps.nix
     ./colorschemes.nix
+    ./globals.nix
   ];
 }
