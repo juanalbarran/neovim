@@ -16,7 +16,7 @@
         };
       in
       {
-        packages.default = import ./config/ inherit { pkgs };
+        packages.default = import ./config { inherit pkgs; };
 
         apps.default = {
           type = "app";

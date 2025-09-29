@@ -1,20 +1,20 @@
 # config/plugins.nix
 { pkgs }:
 
-{
-  with pkg.vimPlugins; {
+
+  with pkgs.vimPlugins; {
     start = [
       # core
       plenary-nvim
 
       # editing
       nvim-autopairs
-      nvim-tabout
+      tabout-nvim
       nvim-surround
 
       # files
       oil-nvim
-      fzf-lua-nvim
+      fzf-lua
 
       # lsp
       nvim-lspconfig
@@ -36,11 +36,10 @@
       nvim-treesitter.withAllGrammars
       
       # colorschemes
-      (zenbones-nvim.withAll "extras")
-      (zenwritten-nvim.withAll "extras")
+      #(zenbones-nvim.withAll "extras")
+      #(zenwritten-nvim.withAll "extras")
       gruvbox-nvim
-      tokionight-nvim
       kanagawa-nvim
     ];
-  };
-}
+  }
+

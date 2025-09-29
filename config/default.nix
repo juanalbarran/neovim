@@ -2,10 +2,10 @@
 { pkgs }:
 
 let
-  vimPlugins = import ./plugins.nix { inherit pkgs; }
+  vimPlugins = import ./plugins.nix { inherit pkgs; };
   luaConfig = pkgs.vimUtils.buildVimPlugin {
     name = "kukenan";
-    src = ./lua;
+    src = ../lua;
   };
 in
 pkgs.neovim.override {

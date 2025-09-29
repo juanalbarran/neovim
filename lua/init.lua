@@ -4,4 +4,4 @@ require("keymaps")
 
 require("plugins.oil")
 
-vim.cmd.colorscheme("zenwritten")
+vim.cmd.colorscheme("gruvbox")
