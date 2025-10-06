@@ -1,4 +1,4 @@
--- lua/options.lua
+-- luaConfig/options.lua
 vim.g.have_nerd_font = true
 
 vim.opt.number = true
@@ -28,10 +28,10 @@ vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.writebackup = false
 
-vim.opt.shiftwidth = 4
+vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
 
 vim.opt.undofile = true
 vim.opt.undodir = vim.fn.expand("~/.config/nvim/undodir")
@@ -39,7 +39,7 @@ vim.opt.undodir = vim.fn.expand("~/.config/nvim/undodir")
 vim.opt.timeoutlen = 500
 
 vim.opt.winborder = "rounded"
-vim.opt.background = "light"
+vim.opt.background = "dark"
 -- autocommands
 
 -- whenever a http file is open then this autocommand will force treesitter to higlight it

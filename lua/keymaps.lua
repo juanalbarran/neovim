@@ -1,4 +1,4 @@
--- lua/keymaps.lua
+-- luaConfig/keymaps.lua
 local opts = { noremap = true, silent = true }
 
 -- Mapleader
@@ -10,7 +10,7 @@ vim.keymap.set("i", "jk", "<Esc>", opts, { desc = "Go back to normal mode." })
 vim.keymap.set("i", "jj", "<Esc>", opts, { desc = "Go back to normal mode." })
 
 -- Vital thing for configuration
-vim.keymap.set("n", "-", "<cmd>Oil<CR>", opts, { desc = "File Explorer." })
+vim.keymap.set("n", "-", "<cmd>Ex<CR>", opts, { desc = "File Explorer." })
 
 -- Clear Highlights when pressing Esc in a search
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")

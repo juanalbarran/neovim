@@ -2,17 +2,20 @@
 { pkgs }:
 
 let
-  vimPlugins = import ./plugins.nix { inherit pkgs; };
-  luaConfig = pkgs.vimUtils.buildVimPlugin {
-    name = "kukenan";
-    src = ../lua;
-  };
+  allPlugins = (import ./plugins.nix { inherit pkgs; }).start;
 in
 pkgs.neovim.override {
   vimAlias = true;
   configure = {
-    packages.plugins = vimPlugins // {
-      start = vimPlugins.start ++ [ luaConfig ];
+    packages.myPlugins = {
+      start = allPlugins;
     };
+    customRC = ''
+      lua << EOF
+      -- Add our local lua directory to Lua's package path
+      package.path = package.path .. ';${../lua}/?.lua'
+      require('init')
+      EOF
+    '';
   };
 }

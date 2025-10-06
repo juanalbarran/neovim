@@ -3,7 +3,7 @@
 
 with pkgs.vimPlugins; {
   start = [
-    # plugin manager
+    # lazy
     lazy-nvim
 
     # core
@@ -41,6 +41,7 @@ with pkgs.vimPlugins; {
     zenbones-nvim
     gruvbox-nvim
     kanagawa-nvim
+    rose-pine
     lush-nvim
 
     # icons
