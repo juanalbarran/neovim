@@ -1,7 +1,11 @@
 -- lua/plugins/oil.lua
-require("oil").setup({
-	default_file_explorer = true,
-	view_options = {
-		show_hidden = true,
+return {
+	"stevearc/oil.nvim",
+	opts = {
+		view_options = {
+			show_hidden = true,
+		},
 	},
-})
+	dependencies = { "nvim-tree/nvim-web-devicons" },
+	lazy = false,
+}
