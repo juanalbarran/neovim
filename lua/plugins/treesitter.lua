@@ -1,14 +1,6 @@
-return {
-	"nvim-treesitter/nvim-treesitter",
-	branch = "master",
-	lazy = false,
-	build = ":TSUpdate",
-	dependencies = {
-		"nvim-treesitter/nvim-treesitter-textobjects",
-	},
-	opts = {
-		sync_install = true,
-		auto_install = true,
+require("nvim-treesitter").setup({
+		sync_install = false,
+		auto_install = false,
 		indent = {
 			enable = true,
 		},
@@ -89,5 +81,4 @@ return {
 				},
 			},
 		},
-	},
-}
+  })

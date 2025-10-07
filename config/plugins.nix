@@ -3,9 +3,6 @@
 
 with pkgs.vimPlugins; {
   start = [
-    # lazy
-    lazy-nvim
-
     # core
     plenary-nvim
 
@@ -30,6 +27,7 @@ with pkgs.vimPlugins; {
     cmp-path
     cmp_luasnip
     luasnip
+    blink-cmp
 
     # format
     conform-nvim
@@ -46,9 +44,14 @@ with pkgs.vimPlugins; {
 
     # icons
     nvim-web-devicons
+    mini-icons
 
     # ui
-    noice-nvim
+    nvim-notify
     lualine-nvim
+    lualine-lsp-progress
+
+    # utils
+    which-key-nvim
   ];
 }

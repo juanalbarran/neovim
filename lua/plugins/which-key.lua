@@ -1,7 +1,3 @@
-return {
-	"folke/which-key.nvim",
-	event = "VimEnter",
-	opts = {
+require("which-key").setup({
 		preset = "helix",
-	},
-}
+  })

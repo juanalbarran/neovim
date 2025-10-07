@@ -2,4 +2,24 @@
 require("options")
 require("keymaps")
 
-vim.cmd.colorscheme("rose-pine")
+require("plugins.treesitter")
+
+-- files
+require("plugins.oil")
+require("plugins.fzf-lua")
+
+-- editing
+require("nvim-autopairs").setup()
+require("tabout").setup()
+
+-- ui
+require("plugins.lualine")
+--require("noice").setup()
+
+-- utils
+require("plugins.which-key")
+
+-- format
+require("plugins.conform")
+
+vim.cmd.colorscheme("zenwritten")
