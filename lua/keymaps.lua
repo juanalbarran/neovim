@@ -21,6 +21,10 @@ vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, opts, { desc = "Open
 -- Split windows
 vim.keymap.set("n", "<leader>vs", "<cmd>vsplit<CR>", opts, { desc = "[V]ertical [S]plit." })
 vim.keymap.set("n", "<leader>hs", "<cmd>split<CR>", opts, { desc = "[H]orizontal [S]plit." })
+vim.keymap.set("n", "<c-l>", "<c-w><c-l>", opts)
+vim.keymap.set("n", "<c-h>", "<c-w><c-h>", opts)
+vim.keymap.set("n", "<c-j>", "<c-w><c-j>", opts)
+vim.keymap.set("n", "<c-k>", "<c-w><c-k>", opts)
 
 -- Fzf-lua
 vim.keymap.set("n", "<leader>cs", "<cmd>FzfLua colorschemes<CR>", opts, { desc = "Find [C]olor[S]chemes." })

@@ -14,7 +14,7 @@ require("tabout").setup()
 
 -- ui
 require("plugins.lualine")
---require("noice").setup()
+require("noice").setup()
 
 -- utils
 require("plugins.which-key")

@@ -50,6 +50,7 @@ with pkgs.vimPlugins; {
     nvim-notify
     lualine-nvim
     lualine-lsp-progress
+    noice-nvim
 
     # utils
     which-key-nvim
