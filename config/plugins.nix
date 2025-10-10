@@ -53,5 +53,6 @@ with pkgs.vimPlugins; {
 
     # utils
     which-key-nvim
+    nvim-colorizer-lua
   ];
 }

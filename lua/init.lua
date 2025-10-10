@@ -18,8 +18,9 @@ require("plugins.lualine")
 
 -- utils
 require("plugins.which-key")
+require("colorizer").setup()
 
 -- format
 require("plugins.conform")
 
-vim.cmd.colorscheme("zenwritten")
+vim.cmd.colorscheme("zenbones")
