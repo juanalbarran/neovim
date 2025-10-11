@@ -8,7 +8,8 @@
         transparency = true;
       };
     };
-    poimandres.enable = true;
+    poimandres.enable = false;
     base16.enable = false;
+    gruvbox.enable = true;
   };
 }

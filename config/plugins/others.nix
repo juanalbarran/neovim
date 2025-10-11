@@ -11,5 +11,7 @@
     # Ruby provider (less common, but still supported)
     (pkgs.ruby.withPackages (ps: with ps; [ neovim ]))
   ];
+  extraPlugins = [pkgs.vimPlugins."zenbones-nvim"];
+  extraConfigLua = "require('zenbones').setup()";
 }
 
