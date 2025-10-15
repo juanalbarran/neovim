@@ -1,30 +1,15 @@
-# config/plugins/conform.nix
-{ pkgs, ... }:
-
 {
-  extraPackages = with pkgs; [ shfmt ];
-  plugins.conform-nvim = {
+  vim.formatter.conform-nvim = {
     enable = true;
-    settings = {
-      format_on_save = {
-        lspFallback = true;
-        timeoutMs = 500;
+
+    setupOpts = {
+      defult_format_opts = {
+        lsp_format = "fallback";
       };
       formatters_by_ft = {
-        html = [ [ "prettierd" "prettier" ] ];
-        css = [ [ "prettierd" "prettier" ] ];
-        javascript = [ [ "prettierd" "prettier" ] ];
-        javascriptreact = [ [ "prettierd" "prettier" ] ];
-        typescript = [ [ "prettierd" "prettier" ] ];
-        typescriptreact = [ [ "prettierd" "prettier" ] ];
-        python = [ "black" ];
-        lua = [ "stylua" ];
-        nix = [ "nixfmt" ];
-        markdown = [ [ "prettierd" "prettier" ] ];
-        yaml = [ "yamllint" "yamlfmt" ];
-        terragrunt = [ "hcl" ];
-        bash = [ "shfmt" ];
-        sh = [ "shfmt" ];
+        java = [
+          "google_java_format"
+        ];
       };
     };
   };

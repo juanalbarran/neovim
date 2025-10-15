@@ -1,4 +1,10 @@
-# config/plugins/autopairs.nix
+{ pkgs, ... }:
 {
-  plugins.nvim-autopairs.enable = true;
+  vim.extraPlugins = with pkgs.vimPlugins; {
+    nvim-autopairs = {
+      package = nvimautopairs;
+      setup = ''require("nvim-autopairs").setup({})'';
+    };
+  };
 }
+

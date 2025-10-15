@@ -1,6 +1,4 @@
-# config/plugins/fzflua.nix
+{ ... }:
 {
-  plugins.fzf-lua = {
-    enable = true;
-  };
+  vim.fzf-lua.enable = true;
 }

@@ -1,11 +1,8 @@
-# config/plugins/oil.nix
 {
-  plugins.oil = {
+  vim.utility.oil-nvim = {
     enable = true;
-    settings = {
-      view_options = {
-        show_hidden = true;
-      };
+    setupOpts = {
+      view_options.show_hidden = true; 
     };
   };
 }

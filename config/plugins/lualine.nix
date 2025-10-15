@@ -1,4 +1,3 @@
-# config/plugins/lualine.nix
 {
-  plugins.lualine.enable = true;
+  vim.statusline.lualine.enable = true;
 }
