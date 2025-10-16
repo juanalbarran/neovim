@@ -11,7 +11,7 @@
       softtabstop = 2;
       showtabline = 2;
       expandtab = true;
-      
+
       # Indentation
       smartindent = true;
       shiftwidth = 2;
@@ -28,7 +28,7 @@
     clipboard = {
       enable = true;
       providers.wl-copy.enable = true;
-      register = "unnamedplus";
+      registers = "unnamedplus";
     };
   };
 }

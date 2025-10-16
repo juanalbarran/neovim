@@ -1,27 +1,27 @@
 {
-  vim.keymaps = {
+  vim.keymaps = [
     # Pane movement
     {
       mode = "n";
-      key = "<c-l>"
+      key = "<c-l>";
       silent = true;
       action = "<c-w>l";
     }
     {
       mode = "n";
-      key = "<c-h>"
+      key = "<c-h>";
       silent = true;
       action = "<c-w>h";
     }
     {
       mode = "n";
-      key = "<c-j>"
+      key = "<c-j>";
       silent = true;
       action = "<c-j>l";
     }
     {
       mode = "n";
-      key = "<c-k>"
+      key = "<c-k>";
       silent = true;
       action = "<c-k>l";
     }
@@ -32,5 +32,5 @@
       silent = true;
       action = "<cmd>vsplit<cr>";
     }
-  };
+  ];
 }

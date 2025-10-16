@@ -15,31 +15,31 @@
     }
     {
       mode = "n";
-      key = "<Esc>",
+      key = "<Esc>";
       silent = true;
       action = "<cmd>nohlsearch<CR>";
     }
     {
       mode = "n";
       key = "<leader>q";
-      action = vim.diagnostic.setlclist;
+      action = "<cmd>lua vim.diagnostic.setlclist<cr>";
       desc = "Open diagnostic [Q]uickfix.";
     }
-    
+
     # Movement
     {
       mode = "n";
-      key = "<c-d>"
+      key = "<c-d>";
       silent = true;
       action = "<c-d>zz";
     }
     {
       mode = "n";
-      key = "<c-u>"
+      key = "<c-u>";
       silent = true;
       action = "<c-u>zz";
     }
-        # Buffer moves
+    # Buffer moves
     {
       mode = "n";
       key = "<leader>n";

@@ -21,41 +21,35 @@
           enabled = true;
           trigger.enabled = true;
         };
-      };
-      sources = {
-        default = [
-          "lsp"
-          "snippets"
-          "spell"
-          "path"
-          "buffer"
-        ];
-        providers = {
-          lsp = {
-            min_keyword_length = 3;
-            score_offset = 5;
+        sources = {
+          default = [ "lsp" "snippets" "spell" "path" "buffer" ];
+          providers = {
+            lsp = {
+              min_keyword_length = 3;
+              score_offset = 5;
+            };
+            snippets = {
+              min_keyword_length = 2;
+              score_offset = 4;
+            };
+            spell = {
+              min_keyword_length = 3;
+              score_offset = 3;
+            };
+            path = {
+              min_keyword_length = 3;
+              score_offset = 2;
+            };
+            buffer = {
+              min_keyword_length = 5;
+              score_offset = 1;
+            };
           };
-          snippets = {
-            min_keyword_length = 2;
-            score_offset = 4;
+          cmdline.keymap.preset = "none";
+          completion = {
+            documentation.auto_show = true;
+            menu.auto_show = true;
           };
-          spell = {
-            min_keyword_length = 3;
-            score_offset = 3;
-          };
-          path = {
-            min_keyword_length = 3;
-            score_offset = 2;
-          };
-          buffer = {
-            min_keyword_length = 5;
-            score_offset = 1;
-          };
-        };
-        cmdline.keymap.preset = "none";
-        completion = {
-          documentation.auto_show = true;
-          menu.auto_show = true;
         };
       };
     };

@@ -1,8 +1,7 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   vim.extraPlugins = with pkgs.vimPlugins; {
     nvim-autopairs = {
-      package = nvimautopairs;
+      package = nvim-autopairs;
       setup = ''require("nvim-autopairs").setup({})'';
     };
   };
