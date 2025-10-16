@@ -3,6 +3,7 @@
 
 let
   allPlugins = (import ./plugins.nix { inherit pkgs; }).start;
+  extraExecutables = import ./extraPackages.nix { inherit pkgs; };
 in
 pkgs.neovim.override {
   vimAlias = true;
@@ -10,6 +11,9 @@ pkgs.neovim.override {
     packages.myPlugins = {
       start = allPlugins;
     };
+    extraWrappedArgs = [
+      "--prefix" "PATH" ":" (pkgs.lib.makeBinPath extraExecutables)
+    ];
     customRC = ''
       lua << EOF
       -- Add our local lua directory to Lua's package path

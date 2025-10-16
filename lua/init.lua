@@ -1,6 +1,8 @@
 -- luaConfig/init.lua
 require("options")
 require("keymaps")
+require("autocommands")
+require("lsp")
 
 require("plugins.treesitter")
 
@@ -22,5 +24,8 @@ require("colorizer").setup()
 
 -- format
 require("plugins.conform")
+
+-- autocomplete
+require("plugins.blink-cmp")
 
 vim.cmd.colorscheme("zenbones")

@@ -14,7 +14,7 @@ vim.opt.termguicolors = true
 
 vim.opt.showmode = false
 
-vim.opt.scrolloff = 20
+vim.opt.scrolloff = 10
 
 vim.opt.cmdheight = 0
 vim.opt.showcmd = false
