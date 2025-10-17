@@ -1,4 +1,5 @@
 # Neovim
+
 My nix neovim build
 
 ## Plugins
@@ -15,6 +16,5 @@ My nix neovim build
 - [x] Tabout
 - [x] Blink-cmp
 - [x] Smear-cursor
-
 
 https://primamateria.github.io/blog/neovim-editions/#personal-story

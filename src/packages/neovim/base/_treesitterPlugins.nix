@@ -1,8 +1,8 @@
 # src/packages/neovim/base/treesitterPlugins.nix
-{ }:
-treesitterPlugins:
+{}: treesitterPlugins:
 with treesitterPlugins; [
   bash
+  html
   markdown
   markdown_inline
   regex

@@ -29,6 +29,8 @@ with pkgs.vimPlugins; [
 
   # Utils
   nvim-colorizer-lua
+  render-markdown-nvim
+  diffview-nvim
 
   # Completion
   blink-cmp
