@@ -1,4 +1,4 @@
---src/packages/neovim/light/__config/lua/options.lua
+--src/packages/neovim/base/__config/lua/options.lua
 vim.g.have_nerd_font = true
 
 vim.opt.number = true

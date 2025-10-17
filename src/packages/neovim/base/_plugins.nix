@@ -1,7 +1,9 @@
-# src/packages/neovim/light/_plugins.nix
-{ pkgs, root }:
+# src/packages/neovim/base/_plugins.nix
+{
+  pkgs,
+  root,
+}:
 with pkgs.vimPlugins; [
-
   # Look & Feel
   lualine-nvim
   noice-nvim
@@ -23,6 +25,7 @@ with pkgs.vimPlugins; [
 
   # Icons
   nvim-web-devicons
+  mini-icons
 
   # Utils
   nvim-colorizer-lua
@@ -41,4 +44,6 @@ with pkgs.vimPlugins; [
   # Commenting
   vim-commentary
 
+  # Treesitter
+  nvim-treesitter
 ]

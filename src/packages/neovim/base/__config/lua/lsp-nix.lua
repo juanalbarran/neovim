@@ -1,3 +1,4 @@
+-- src/packages/neovim/base/__config/lua/lsp-nix.lua
 local blink = require("blink-cmp")
 
 local capabilities = blink.get_lsp_capabilities()

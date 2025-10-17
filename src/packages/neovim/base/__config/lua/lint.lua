@@ -1,3 +1,4 @@
+-- src/packages/neovim/base/__config/lua/lint.lua
 local lint = require("lint")
 
 lint.linters_by_ft = {

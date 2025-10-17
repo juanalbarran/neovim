@@ -1,11 +1,12 @@
+-- src/packages/neovim/base/__config/lua/conform.lua
 require("conform").setup({
-  formatters_by_ft = {
-    lua = { "stylua" },
-    nix = { "alejandra" },
-    markdown = { "prettier"},
-  },
-  format_on_save = function(bufnr)
-    -- Disable with a global or buffer-local variable
+	formatters_by_ft = {
+		lua = { "stylua" },
+		nix = { "alejandra" },
+		markdown = { "prettier" },
+	},
+	format_on_save = function(bufnr)
+		-- Disable with a global or buffer-local variable
 		if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
 			return
 		end
