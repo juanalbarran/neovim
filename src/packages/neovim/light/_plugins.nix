@@ -1,13 +1,13 @@
 # src/packages/neovim/light/_plugins.nix
-{ pkgs }:
-with pkgs.vimPlugins; [ 
-  
+{ pkgs, root }:
+with pkgs.vimPlugins; [
+
   # Look & Feel
   lualine-nvim
   noice-nvim
   nvim-notify
   which-key-nvim
-  
+
   # Colorsheme
   zenbones-nvim
   lush-nvim
@@ -26,5 +26,19 @@ with pkgs.vimPlugins; [
 
   # Utils
   nvim-colorizer-lua
-  
+
+  # Completion
+  blink-cmp
+
+  # Language Server Protocol
+  lspsaga-nvim
+  nvim-lspconfig
+
+  # Linting & formatting
+  nvim-lint
+  conform-nvim
+
+  # Commenting
+  vim-commentary
+
 ]

@@ -9,7 +9,7 @@ vim.g.maplocaleader = " "
 vim.keymap.set("i", "jk", "<Esc>", opts, { desc = "Go back to normal mode." })
 vim.keymap.set("i", "jj", "<Esc>", opts, { desc = "Go back to normal mode." })
 
--- Vital thing for configuration
+-- Important File Explorer
 vim.keymap.set("n", "-", "<cmd>Oil<CR>", opts, { desc = "File Explorer." })
 
 -- Clear Highlights when pressing Esc in a search
@@ -34,22 +34,10 @@ vim.keymap.set("n", "<leader>fk", "<cmd>FzfLua keymaps<CR>", opts, { desc = "[F]
 vim.keymap.set("n", "<leader>fr", "<cmd>FzfLua resume<CR>", opts, { desc = "[F]ind [R]esume of the previous files." })
 vim.keymap.set("n", "<leader>fw", "<cmd>FzfLua grep_cword<CR>", opts, { desc = "[F]ind current [W]ord." })
 vim.keymap.set("n", "<leader>fg", "<cmd>FzfLua live_grep<CR>", opts, { desc = "[F]ind by [G]rep." })
-vim.keymap.set(
-	"n",
-	"<leader>fnf",
-	"<cmd>lua FzfLua.files({ cwd = vim.fn.stdpath('config') })<CR>",
-	opts,
-	{ desc = "[F]ind [N]eovim [F]iles." }
-)
+
 -- Buffer moves
 vim.keymap.set("n", "<leader>n", ":bnext<CR>", { desc = "[N]ext Buffer." })
 vim.keymap.set("n", "<leader>p", ":bprevious<CR>", { desc = "[P]revious Buffer." })
 
--- Dark / Light mode switch
-vim.keymap.set("n", "<leader>tbg", function()
-	if vim.o.background == "dark" then
-		vim.o.background = "light"
-	else
-		vim.o.background = "dark"
-	end
-end, opts, { desc = "Shows Background" })
+-- Colorizer Toggle
+vim.keymap.set("n", "<leader>ct", "<cmd>ColorizerToggle<CR>", opts, { desc = "[C]olorizer [T]oggle" })
