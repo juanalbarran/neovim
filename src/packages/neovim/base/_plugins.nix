@@ -3,7 +3,8 @@
   pkgs,
   root,
 }:
-with pkgs.vimPlugins; [
+with pkgs.vimPlugins;
+with root.packages.vimPlugins; [
   # Look & Feel
   lualine-nvim
   noice-nvim
@@ -13,6 +14,7 @@ with pkgs.vimPlugins; [
   # Colorsheme
   zenbones-nvim
   lush-nvim
+  alabaster
 
   # Files
   oil-nvim

@@ -1,5 +1,5 @@
 # src/packages/neovim/base/_dependencies.nix
-{ pkgs }:
+{pkgs}:
 with pkgs; [
   bashInteractive
   ripgrep

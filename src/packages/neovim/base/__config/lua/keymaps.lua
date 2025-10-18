@@ -19,7 +19,7 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { noremap = true, silent = t
 vim.keymap.set(
 	"n",
 	"<leader>q",
-	vim.diagnostic.setloclist,
+	vim.diagnostic.open_float,
 	{ noremap = true, silent = true, desc = "Open diagnostic [Q]uickfix." }
 )
 
@@ -76,3 +76,36 @@ vim.keymap.set(
 	"<cmd>ColorizerToggle<CR>",
 	{ noremap = true, silent = true, desc = "[C]olorizer [T]oggle" }
 )
+
+-- LSP: Language Server Protocol
+vim.keymap.set(
+	"n",
+	"<leader>gi",
+	vim.lsp.buf.implementation,
+	{ noremap = true, silent = true, desc = "LSP: [G]o to [I]mplementation" }
+)
+vim.keymap.set(
+	"n",
+	"<leader>ca",
+	vim.lsp.buf.code_action,
+	{ noremap = true, silent = true, desc = "LSP: [C]ode [A]ction" }
+)
+vim.keymap.set(
+	"n",
+	"<leader>gd",
+	vim.lsp.buf.definition,
+	{ noremap = true, silent = true, desc = "LSP: [G]o to [D]efinition" }
+)
+vim.keymap.set(
+	"n",
+	"<leader>gtd",
+	vim.lsp.buf.type_definition,
+	{ noremap = true, silent = true, desc = "LSP: [G]o to [T]ype [D]efinition" }
+)
+vim.keymap.set(
+	"n",
+	"<leader>gD",
+	vim.lsp.buf.declaration,
+	{ noremap = true, silent = true, desc = "LSP: [G]o to [D]eclaration" }
+)
+vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { noremap = true, silent = true, desc = "LSP: [R]e[N]ame" })
