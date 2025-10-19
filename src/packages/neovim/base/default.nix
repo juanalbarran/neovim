@@ -1,3 +1,3 @@
-# src/packages/neovim/base/_manifest.nix
+# src/packages/neovim/base/default.nix
 { root }:
 root.lib.assembleNeovim { name = "base"; }
