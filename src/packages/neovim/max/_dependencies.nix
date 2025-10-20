@@ -12,6 +12,7 @@ with pkgs; [
   statix
   alejandra
   nixd
+  nixfmt
 
   prettier
   viu
