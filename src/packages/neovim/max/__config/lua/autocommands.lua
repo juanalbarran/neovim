@@ -8,6 +8,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
 
 vim.api.nvim_create_autocmd("LspAttach", {
 	callback = function(event)
+		local fzf = require("fzf-lua")
 		local bufnr = event.buf
 		local client = vim.lsp.get_client_by_id(event.data.client_id)
 		vim.cmd.setlocal("signcolumn=yes")
@@ -17,18 +18,23 @@ vim.api.nvim_create_autocmd("LspAttach", {
 			return { noremap = true, silent = true, buffer = bufnr, desc = "LSP: " .. description }
 		end
 		-- Keybinds
-		-- Peek definition
-		vim.keymap.set("n", "<leader>gpd,", "<cmd>Lspsaga peek_definition<CR>", desc("[G]o to [P]eek [D]efinition"))
-		-- Peek type definition
-		vim.keymap.set(
-			"n",
-			"<leader>gptd",
-			"<cmd>Lspsaga peek_type_definition<CR>",
-			desc("[G]o to [P]eek [T]ype [D]efinition")
-		)
+		-- Definition
+		vim.keymap.set("n", "<leader>gd,", fzf.lsp_definitions, desc("[G]o to [D]efinition"))
+		-- Type definition
+		vim.keymap.set("n", "<leader>gtd", fzf.lsp_typedefs, desc("[G]o to [T]ype [D]efinition"))
+		-- Declaration
+		vim.keymap.set("n", "<leader>gD", fzf.lsp_declarations, desc("[G]o to [D]eclarations"))
 		-- Code actions
-		vim.keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", desc("[G]o to [C]ode [A]ction"))
+		vim.keymap.set("n", "<leader>gca", fzf.lsp_code_actions, desc("[G]o to [C]ode [A]ction"))
 		-- References
-		vim.keymap.set("n", "<leader>gr", "<cmd>Lspsaga finder ref<CR>", desc("[G]o to [R]eferences"))
+		vim.keymap.set("n", "<leader>gr", fzf.lsp_references, desc("[G]o to [R]eferences"))
+		-- Implementation
+		vim.keymap.set("n", "<leader>gi", fzf.lsp_implementations, desc("[G]o to [I]mplementations"))
+		-- Diagnostics
+		vim.keymap.set("n", "<leader>q", fzf.diagnostics_document, desc("Go to Diagnostics"))
+		-- Finder
+		vim.keymap.set("n", "<leader>gf", fzf.lsp_finder, desc("[G]o to [F]inder"))
+		-- Rename
+		vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, desc("[R]e[N]ame"))
 	end,
 })

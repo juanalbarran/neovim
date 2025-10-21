@@ -4,7 +4,8 @@
   root,
 }:
 with pkgs.vimPlugins;
-with root.packages.vimPlugins; [
+with root.packages.vimPlugins;
+[
   # Look & Feel
   lualine-nvim
   noice-nvim
@@ -38,7 +39,6 @@ with root.packages.vimPlugins; [
   blink-cmp
 
   # Language Server Protocol
-  lspsaga-nvim
   nvim-lspconfig
   nvim-vtsls
 
