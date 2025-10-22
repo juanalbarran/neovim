@@ -1,16 +1,13 @@
 # src/packages/neovim/max/_plugins.nix
-{
-  pkgs,
-  root,
-}:
+{ pkgs, root, }:
 with pkgs.vimPlugins;
-with root.packages.vimPlugins;
-[
+with root.packages.vimPlugins; [
   # Look & Feel
   lualine-nvim
   noice-nvim
   nvim-notify
   which-key-nvim
+  vim-sleuth
 
   # Colorsheme
   zenbones-nvim
@@ -41,6 +38,7 @@ with root.packages.vimPlugins;
   # Language Server Protocol
   nvim-lspconfig
   nvim-vtsls
+  lspsaga-nvim
 
   # Linting & formatting
   nvim-lint
