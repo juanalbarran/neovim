@@ -41,6 +41,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		vim.keymap.set("n", "<leader>gf", "<cmd>Lspsaga finder<CR>", desc("[G]o to [F]inder"))
 		-- Rename
 		vim.keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", desc("[R]e[N]ame"))
+		-- Hover
+		vim.keymap.set("n", "<K>", "<cmd>Lspsaga hover_doc<CR>", desc("Hover"))
 
 		-- The following two autocommands are used to highlight references of the
 		-- word under your cursor when your cursor rests there for a little while.

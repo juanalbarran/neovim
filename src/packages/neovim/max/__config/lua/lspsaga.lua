@@ -3,7 +3,7 @@ require("lspsaga").setup({
 	lightbulb = {
 		enable = false,
 	},
-	breadcrumbs = {
+	symbol_in_winbar = {
 		enable = false,
 	},
 })

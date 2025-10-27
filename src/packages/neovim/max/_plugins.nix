@@ -1,7 +1,11 @@
 # src/packages/neovim/max/_plugins.nix
-{ pkgs, root, }:
+{
+  pkgs,
+  root,
+}:
 with pkgs.vimPlugins;
-with root.packages.vimPlugins; [
+with root.packages.vimPlugins;
+[
   # Look & Feel
   lualine-nvim
   noice-nvim
@@ -13,6 +17,7 @@ with root.packages.vimPlugins; [
   zenbones-nvim
   lush-nvim
   alabaster
+  vague
 
   # Files
   oil-nvim
