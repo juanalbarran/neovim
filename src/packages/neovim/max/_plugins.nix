@@ -1,11 +1,7 @@
 # src/packages/neovim/max/_plugins.nix
-{
-  pkgs,
-  root,
-}:
+{ pkgs, root, }:
 with pkgs.vimPlugins;
-with root.packages.vimPlugins;
-[
+with root.packages.vimPlugins; [
   # Look & Feel
   lualine-nvim
   noice-nvim
@@ -36,6 +32,7 @@ with root.packages.vimPlugins;
   nvim-colorizer-lua
   render-markdown-nvim
   diffview-nvim
+  kulala-nvim
 
   # Completion
   blink-cmp
