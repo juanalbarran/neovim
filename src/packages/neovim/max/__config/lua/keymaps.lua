@@ -24,13 +24,15 @@ vim.keymap.set(
 	{ noremap = true, silent = true, desc = "Open diagnostic [Q]uickfix." }
 )
 
+-- Movement
+vim.keymap.set("n", "<C-j>", "<C-d>zz", opts)
+vim.keymap.set("n", "<C-k>", "<C-u>zz", opts)
+
 -- Split windows
 vim.keymap.set("n", "<leader>vs", "<cmd>vsplit<CR>", { noremap = true, silent = true, desc = "[V]ertical [S]plit." })
 vim.keymap.set("n", "<leader>hs", "<cmd>split<CR>", { noremap = true, silent = true, desc = "[H]orizontal [S]plit." })
 vim.keymap.set("n", "<c-l>", "<c-w><c-l>", opts)
 vim.keymap.set("n", "<c-h>", "<c-w><c-h>", opts)
-vim.keymap.set("n", "<c-j>", "<c-w><c-j>", opts)
-vim.keymap.set("n", "<c-k>", "<c-w><c-k>", opts)
 
 -- Files
 vim.keymap.set(
