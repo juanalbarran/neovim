@@ -1,6 +1,7 @@
 # src/packages/neovim/max/_dependencies.nix
 { pkgs }:
-with pkgs; [
+with pkgs;
+[
   bashInteractive
   ripgrep
   fzf

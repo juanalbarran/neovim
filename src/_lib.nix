@@ -3,13 +3,14 @@
   pkgs,
   root,
   neovimNixLib,
-}: let
+}:
+let
   initializedNeovimNixLib = neovimNixLib.init {
     neovimPackage = pkgs.neovim;
     editionsDir = ./packages/neovim;
     editionsSet = root.packages.neovim;
   };
-in {
-  assembleNeovim = {name}:
-    initializedNeovimNixLib.assembleNeovim {inherit name;};
+in
+{
+  assembleNeovim = { name }: initializedNeovimNixLib.assembleNeovim { inherit name; };
 }

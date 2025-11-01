@@ -1,7 +1,6 @@
 # src/packages/neovim/max/_treesitterPlugins.nix
 { }:
-treesitterPlugins:
-with treesitterPlugins; [
+treesitterPlugins: with treesitterPlugins; [
   bash
   markdown
   markdown_inline
