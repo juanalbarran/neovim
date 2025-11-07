@@ -12,6 +12,7 @@ with root.packages.vimPlugins;
   nvim-notify
   which-key-nvim
   vim-sleuth
+  ts-error-translator
 
   # Colorsheme
   zenbones-nvim
