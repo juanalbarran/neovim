@@ -29,20 +29,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		vim.keymap.set("n", "<leader>gr", fzf.lsp_references, desc("[G]o to [R]eferences"))
 		-- Implementation
 		vim.keymap.set("n", "<leader>gi", fzf.lsp_implementations, desc("[G]o to [I]mplementations"))
-		-- Diagnostics
-		vim.keymap.set(
-			"n",
-			"<leader>gpd",
-			"<cmd>LspSaga diagnostic_jump_prev<CR>",
-			desc("[G]o to [P]revious [D]iagnostic")
-		)
-		vim.keymap.set("n", "<leader>gnd", "<cmd>Lspsaga diagnostic_jump_next<CR>", desc("[G]o to [N]ext [D]iagnostic"))
-		-- Finder
-		vim.keymap.set("n", "<leader>gf", "<cmd>Lspsaga finder<CR>", desc("[G]o to [F]inder"))
 		-- Rename
-		vim.keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", desc("[R]e[N]ame"))
-		-- Hover
-		vim.keymap.set("n", "<K>", "<cmd>Lspsaga hover_doc<CR>", desc("Hover"))
+		vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, desc("[R]e[N]ame"))
+		-- Document symbols
+		vim.keymap.set("n", "<leader>gs", fzf.lsp_document_symbols, desc("[F]ind document [S]ymbols"))
 
 		-- The following two autocommands are used to highlight references of the
 		-- word under your cursor when your cursor rests there for a little while.

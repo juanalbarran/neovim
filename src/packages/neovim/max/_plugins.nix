@@ -42,9 +42,7 @@ with root.packages.vimPlugins;
   blink-cmp
 
   # Language Server Protocol
-  nvim-lspconfig
   nvim-vtsls
-  lspsaga-nvim
 
   # Linting & formatting
   nvim-lint

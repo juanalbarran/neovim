@@ -42,7 +42,7 @@ vim.keymap.set(
 	{ noremap = true, silent = true, desc = "Find [C]olor[S]chemes." }
 )
 vim.keymap.set("n", "<leader>ff", fzfLua.files, { noremap = true, silent = true, desc = "[F]ind [F]iles." })
-vim.keymap.set("n", "<leader>b", fzfLua.buffers, { noremap = true, silent = true, desc = "Find [B]uffers." })
+vim.keymap.set("n", "<leader>fb", fzfLua.buffers, { noremap = true, silent = true, desc = "[F]ind [B]uffers." })
 vim.keymap.set("n", "<leader>fk", fzfLua.keymaps, { noremap = true, silent = true, desc = "[F]ind [K]eymaps." })
 vim.keymap.set(
 	"n",
