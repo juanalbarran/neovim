@@ -53,14 +53,6 @@ vim.keymap.set(
 vim.keymap.set("n", "<leader>fw", fzfLua.grep_cword, { noremap = true, silent = true, desc = "[F]ind current [W]ord." })
 vim.keymap.set("n", "<leader>fg", fzfLua.grep, { noremap = true, silent = true, desc = "[F]ind by [G]rep." })
 
--- Kulala
-vim.keymap.set("n", "<leader>rs", function()
-	require("kulala").run()
-end, { noremap = true, silent = true, desc = "[R]equest: [S]end" })
-vim.keymap.set("n", "<leader>ra", function()
-	require("kulala").run_all()
-end, { noremap = true, silent = true, desc = "[R]equest: Send [A]ll" })
-
 -- Colorizer Toggle
 vim.keymap.set(
 	"n",
