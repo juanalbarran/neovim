@@ -34,6 +34,12 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		-- Document symbols
 		vim.keymap.set("n", "<leader>gs", fzf.lsp_document_symbols, desc("[F]ind document [S]ymbols"))
 
+		-- Toggle Inlay Hints
+		vim.keymap.set("n", "<leader>h", function()
+			local is_enabled = vim.lsp.inlay_hint.is_enabled({ bufnr = 0 })
+			vim.lsp.inlay_hint.enable(not is_enabled, { bufnr = 0 })
+		end, desc("Toggle Inlay [H]ints"))
+
 		-- The following two autocommands are used to highlight references of the
 		-- word under your cursor when your cursor rests there for a little while.
 		--    See `:help CursorHold` for information about when this is executed
