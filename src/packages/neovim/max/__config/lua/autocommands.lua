@@ -18,24 +18,24 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		end
 		-- Keybinds
 		-- Definition
-		vim.keymap.set("n", "<leader>gd,", fzf.lsp_definitions, desc("[G]o to [D]efinition"))
+		vim.keymap.set("n", "gd,", fzf.lsp_definitions, desc("[G]o to [D]efinition"))
 		-- Type definition
-		vim.keymap.set("n", "<leader>gtd", fzf.lsp_typedefs, desc("[G]o to [T]ype [D]efinition"))
+		vim.keymap.set("n", "gtd", fzf.lsp_typedefs, desc("[G]o to [T]ype [D]efinition"))
 		-- Declaration
-		vim.keymap.set("n", "<leader>gD", fzf.lsp_declarations, desc("[G]o to [D]eclarations"))
-		-- Code actions
-		vim.keymap.set("n", "<leader>gca", fzf.lsp_code_actions, desc("[G]o to [C]ode [A]ction"))
+		vim.keymap.set("n", "gD", fzf.lsp_declarations, desc("[G]o to [D]eclarations"))
 		-- References
-		vim.keymap.set("n", "<leader>gr", fzf.lsp_references, desc("[G]o to [R]eferences"))
+		vim.keymap.set("n", "gr", fzf.lsp_references, desc("[G]o to [R]eferences"))
 		-- Implementation
-		vim.keymap.set("n", "<leader>gi", fzf.lsp_implementations, desc("[G]o to [I]mplementations"))
+		vim.keymap.set("n", "gi", fzf.lsp_implementations, desc("[G]o to [I]mplementations"))
+		-- Document symbols
+		vim.keymap.set("n", "gs", fzf.lsp_document_symbols, desc("[F]ind document [S]ymbols"))
+		-- Code actions
+		vim.keymap.set("n", "<leader>ca", fzf.lsp_code_actions, desc("[G]o to [C]ode [A]ction"))
 		-- Rename
 		vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, desc("[R]e[N]ame"))
-		-- Document symbols
-		vim.keymap.set("n", "<leader>gs", fzf.lsp_document_symbols, desc("[F]ind document [S]ymbols"))
 
 		-- Toggle Inlay Hints
-		vim.keymap.set("n", "<leader>h", function()
+		vim.keymap.set("n", "<leader>th", function()
 			local is_enabled = vim.lsp.inlay_hint.is_enabled({ bufnr = 0 })
 			vim.lsp.inlay_hint.enable(not is_enabled, { bufnr = 0 })
 		end, desc("Toggle Inlay [H]ints"))

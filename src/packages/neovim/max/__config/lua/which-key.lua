@@ -5,6 +5,6 @@ wk.setup({
 })
 wk.add({
 	{ "<leader>f", group = "Find:" },
-	{ "<leader>g", group = "LSP:" },
+	{ "g", group = "LSP:" },
 	{ "<leader>b", group = "Buffers:" },
 })

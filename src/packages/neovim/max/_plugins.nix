@@ -43,6 +43,7 @@ with root.packages.vimPlugins;
 
   # Language Server Protocol
   nvim-vtsls
+  nvim-jdtls
 
   # Linting & formatting
   nvim-lint
