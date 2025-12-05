@@ -1,3 +1,4 @@
+-- src/packages/neovim/base/__confgi/lua/blink-cmp.lua
 require("blink.cmp").setup({
 	keymap = { preset = "default" },
 	sources = {

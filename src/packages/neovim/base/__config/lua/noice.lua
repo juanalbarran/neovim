@@ -24,4 +24,10 @@ require("noice").setup({
 		view_history = "messages", -- view for :messages
 		view_search = false, -- view for search count messages. Set to `false` to disable
 	},
+	signature = {
+		enabled = true,
+		auto_open = {
+			enabled = false,
+		},
+	},
 })

@@ -4,21 +4,25 @@
   root,
 }:
 with pkgs.vimPlugins;
-with root.packages.vimPlugins; [
+with root.packages.vimPlugins;
+[
   # Look & Feel
   lualine-nvim
   noice-nvim
   nvim-notify
   which-key-nvim
+  vim-sleuth
 
   # Colorsheme
   zenbones-nvim
   lush-nvim
   alabaster
+  vague
 
   # Files
   oil-nvim
   fzf-lua
+  neo-tree-nvim
 
   # Editing
   nvim-autopairs
@@ -37,16 +41,8 @@ with root.packages.vimPlugins; [
   # Completion
   blink-cmp
 
-  # Language Server Protocol
-  lspsaga-nvim
-  nvim-lspconfig
-
   # Linting & formatting
-  nvim-lint
   conform-nvim
-
-  # Commenting
-  vim-commentary
 
   # Treesitter
   nvim-treesitter

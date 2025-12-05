@@ -9,6 +9,7 @@ with pkgs;
 
   stylua
   lua-language-server
+  jdt-language-server
 
   statix
   alejandra

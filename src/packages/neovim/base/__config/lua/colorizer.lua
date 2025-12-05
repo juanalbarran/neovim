@@ -1,3 +1,2 @@
--- src/packages/neovim/light/__config/lua/colorizer.lua
+-- src/packages/neovim/base/__config/lua/colorizer.lua
 require("colorizer").setup()
-
