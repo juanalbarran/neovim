@@ -35,6 +35,9 @@ vim.keymap.set("n", "<leader>hs", "<cmd>split<CR>", { noremap = true, silent = t
 vim.keymap.set("n", "<c-l>", "<c-w><c-l>", opts)
 vim.keymap.set("n", "<c-h>", "<c-w><c-h>", opts)
 
+-- Buffer
+vim.keymap.set("n", "<leader>bd", "<cmd>bdelete<CR>", { noremap = true, silent = true, desc = "[B]uffer [D]elete." })
+
 -- Files
 vim.keymap.set(
 	"n",
