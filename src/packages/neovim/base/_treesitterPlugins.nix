@@ -13,4 +13,6 @@ with treesitterPlugins; [
   jsonc
   yaml
   xml
+  qmljs
+  qmldir
 ]

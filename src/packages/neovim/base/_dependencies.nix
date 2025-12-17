@@ -12,6 +12,7 @@ with pkgs; [
   statix
   alejandra
   nixd
+  qt6.qtdeclarative
 
   prettier
   viu
