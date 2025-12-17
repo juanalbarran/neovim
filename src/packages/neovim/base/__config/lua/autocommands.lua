@@ -11,10 +11,10 @@ vim.api.nvim_create_autocmd("BufEnter", {
 -- higligth yank
 vim.api.nvim_create_autocmd("TextYankPost", {
 	group = vim.api.nvim_create_augroup("highlight_yank", { clear = true }),
-	patter = "*",
+	pattern = "*",
 	desc = "Highlight section on yank",
 	callback = function()
-		vim.highlight.on_yanl({ timeout = 200, visual = true })
+		vim.highlight.on_yank({ timeout = 200, visual = true })
 	end,
 })
 
@@ -98,3 +98,4 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		end
 	end,
 })
+
