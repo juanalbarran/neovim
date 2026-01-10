@@ -3,8 +3,7 @@
 with treesitterPlugins; [
   javascript
   typescript
-  # html already in base
-  css
+  # html and css already in base
   jsdoc
   scss
   tsx

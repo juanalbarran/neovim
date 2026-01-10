@@ -15,4 +15,5 @@ with treesitterPlugins; [
   xml
   qmljs
   qmldir
+  css
 ]

@@ -6,6 +6,7 @@ require("conform").setup({
 		markdown = { "prettier" },
 		qml = { "qmlformat" },
 		qmljs = { "qmlformat" },
+		css = { "prettier" },
 	},
 	format_on_save = function(bufnr)
 		-- Disable with a global or buffer-local variable

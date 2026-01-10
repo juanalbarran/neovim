@@ -13,6 +13,8 @@ with pkgs; [
   alejandra
   nixd
   qt6.qtdeclarative
+  # css, html, etc.
+  vscode-langservers-extracted
 
   prettier
   viu
