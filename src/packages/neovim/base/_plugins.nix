@@ -5,6 +5,9 @@
 }:
 with pkgs.vimPlugins;
 with root.packages.vimPlugins; [
+  # AI
+  opencode-nvim
+
   # Look & Feel
   lualine-nvim
   noice-nvim
