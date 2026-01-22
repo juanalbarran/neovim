@@ -36,7 +36,7 @@ vim.opt.softtabstop = 2
 vim.opt.undofile = true
 vim.opt.undodir = vim.fn.expand("~/.config/nvim/undodir")
 
-vim.opt.timeoutlen = 500
+vim.opt.timeoutlen = 1000
 
 vim.opt.winborder = "rounded"
 vim.opt.background = "dark"

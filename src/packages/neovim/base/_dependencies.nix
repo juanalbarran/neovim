@@ -4,8 +4,12 @@ with pkgs; [
   bashInteractive
   ripgrep
   fzf
-  clang
 
+  # c
+  clang
+  clang-tools
+
+  # lua
   stylua
   lua-language-server
 
