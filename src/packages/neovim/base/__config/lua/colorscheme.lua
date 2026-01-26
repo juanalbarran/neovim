@@ -2,7 +2,11 @@
 -- vim.cmd.colorscheme('zenbones')
 -- vim.cmd.colorscheme("alabaster")
 -- src/packages/neovim/base/__config/lua/colorscheme.lua
-
+require("vague").setup({
+	colors = {
+		bg = "#131314",
+	},
+})
 -- 1. CONFIGURATION
 -- Point to the file managed by toggle-theme.sh
 local theme_file_path = vim.fn.expand("$HOME/.cache/style/mode")
@@ -34,6 +38,14 @@ local function apply_theme(mode)
 	-- Attempt to load
 	vim.o.background = target_bg
 	local ok, _ = pcall(vim.cmd.colorscheme, target_theme)
+
+	if target_theme == "alabaster" then
+		local bgrnd = "#ffffff"
+		vim.api.nvim_set_hl(0, "Normal", { bg = bgrnd })
+		vim.api.nvim_set_hl(0, "NormalNC", { bg = bgrnd })
+		vim.api.nvim_set_hl(0, "SignColumn", { bg = bgrnd })
+		vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = bgrnd })
+	end
 
 	if not ok then
 		-- Return false so we know it failed
