@@ -25,22 +25,21 @@ local function read_file(path)
 end
 
 local function apply_theme(mode)
-	-- Clean the string (remove spaces/newlines)
+	-- Clean the string
 	mode = mode and mode:gsub("%s+", "") or "dark"
 
-	if mode == "light" then
-		vim.api.nvim_set_option_value("background", "light", {})
-		local ok, _ = pcall(vim.cmd.colorscheme, LIGHT_THEME)
-		if not ok then
-			print("Error loading light theme: " .. LIGHT_THEME)
-		end
-	else
-		vim.api.nvim_set_option_value("background", "dark", {})
-		local ok, _ = pcall(vim.cmd.colorscheme, DARK_THEME)
-		if not ok then
-			print("Error loading dark theme: " .. DARK_THEME)
-		end
+	local target_theme = (mode == "light") and LIGHT_THEME or DARK_THEME
+	local target_bg = (mode == "light") and "light" or "dark"
+
+	-- Attempt to load
+	vim.o.background = target_bg
+	local ok, _ = pcall(vim.cmd.colorscheme, target_theme)
+
+	if not ok then
+		-- Return false so we know it failed
+		return false
 	end
+	return true
 end
 
 -- 3. WATCHER LOGIC
@@ -77,7 +76,16 @@ end
 
 -- 4. INITIALIZATION (Run once on startup)
 local current_mode = read_file(theme_file_path)
-apply_theme(current_mode)
+local success = apply_theme(current_mode)
 
+-- Attempt 2: If immediate load failed, wait for VimEnter (Plugins guaranteed to be loaded)
+if not success then
+	vim.api.nvim_create_autocmd("VimEnter", {
+		callback = function()
+			apply_theme(current_mode)
+		end,
+		once = true, -- Only run this once on startup
+	})
+end
 -- Start the watcher
 watch_theme_change()
