@@ -1,58 +1,45 @@
 # flake.nix
 {
-  description = "A nixvim configuration";
-
+  description = "Another neovim flake";
+  outputs = {
+    self,
+    nixpkgs,
+    utils,
+    haumea,
+    neovimNigthlyOverlay,
+    neovim-nix-utils,
+    ...
+  }:
+    utils.lib.eachDefaultSystem (system: let
+      pkgs = import nixpkgs {
+        inherit system;
+        config = {allowUnfree = true;};
+        overlays = [neovimNigthlyOverlay.overlays.default];
+      };
+      neovimNixLib = neovim-nix-utils.lib.${system};
+    in (haumea.lib.load {
+      src = ./src;
+      inputs = {
+        inherit pkgs;
+        inherit neovimNixLib;
+        inherit (pkgs.lib) debug;
+      };
+      transformer = haumea.lib.transformers.liftDefault;
+    }));
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
-    nixvim.url = "github:nix-community/nixvim";
-    flake-parts.url = "github:hercules-ci/flake-parts";
-  };
-
-  outputs =
-    { nixvim, flake-parts, ... }@inputs:
-    flake-parts.lib.mkFlake { inherit inputs; } {
-      systems = [
-        "x86_64-linux"
-        "aarch64-linux"
-        "x86_64-darwin"
-        "aarch64-darwin"
-      ];
-
-      perSystem =
-        { pkgs, system, ... }:
-        let
-          nixvimLib = nixvim.lib.${system};
-          nixvim' = nixvim.legacyPackages.${system};
-          nixvimModule = {
-            inherit system; # or alternatively, set `pkgs`
-            module = import ./config; # import the module directly
-            # You can use `extraSpecialArgs` to pass additional arguments to your module files
-            extraSpecialArgs = {
-              #inherit (inputs) foo;
-            };
-          };
-          nvim = nixvim'.makeNixvimWithModule nixvimModule;
-        in
-        {
-          checks = {
-            # Run `nix flake check .` to verify that your config is not broken
-            default = nixvimLib.check.mkTestDerivationFromNixvimModule nixvimModule;
-          };
-	  packages = { # Lets you run `nix run .` to start nixvim 
-	    default = nvim.overrideAttrs (old: {
-	      lua = pkgs.lua;
-	      dontWrapPythonPrograms = true;
-              dontWrapRubyPrograms = true;
-    	      dontWrapNodePrograms = true;
-	      meta = (old.meta or {}) // {
-	        description = "Kukenan Neovim configuration";
-		longDescription = '' A Nixvim-based Neovim configuration tailored for Canaima NixOS. '';
-		license = pkgs.lib.licenses.mit;
-		platforms = pkgs.lib.platforms.all;
-		teams = { };
-	      };
-	    });
-	  };
-        };
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    utils.url = "github:numtide/flake-utils";
+    haumea = {
+      url = "github:nix-community/haumea";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    neovimNigthlyOverlay = {
+      url = "github:nix-community/neovim-nightly-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    neovim-nix-utils = {
+      url = "github:PrimaMateria/neovim-nix-utils";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 }
