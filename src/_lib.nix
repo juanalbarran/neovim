@@ -8,8 +8,9 @@
     neovimPackage = pkgs.neovim;
     editionsDir = ./packages/neovim;
     editionsSet = root.packages.neovim;
-    extraPackages = [];
+    extraPackages = root.packages;
   };
 in {
-  assembleNeovim = {name}: initializedNeovimNixLib.assembleNeovim {inherit name;};
+  assembleNeovim = {name}:
+    initializedNeovimNixLib.assembleNeovim {inherit name;};
 }

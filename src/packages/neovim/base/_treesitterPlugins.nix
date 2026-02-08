@@ -10,7 +10,6 @@ with treesitterPlugins; [
   luadoc
   nix
   json
-  jsonc
   yaml
   xml
   qmljs

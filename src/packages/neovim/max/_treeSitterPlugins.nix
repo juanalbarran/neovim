@@ -1,6 +1,6 @@
 # src/packages/neovim/max/_treesitterPlugins.nix
-{ }:
-treesitterPlugins: with treesitterPlugins; [
+{}: treesitterPlugins:
+with treesitterPlugins; [
   bash
   markdown
   markdown_inline
@@ -9,7 +9,6 @@ treesitterPlugins: with treesitterPlugins; [
   luadoc
   nix
   json
-  jsonc
   yaml
   xml
 
