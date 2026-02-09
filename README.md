@@ -1,20 +1,25 @@
 # Neovim
 
 My nix neovim build
+It is based in Prima Materia's build.
+[PrimaMateria Blog post](https://primamateria.github.io/blog/neovim-editions/#personal-story)
 
-## Plugins
+## Build command
 
-- [x] Oil
-- [x] Lualine
-- [x] Treesitter
-- [x] Noice
-- [x] Fzf-lua
-- [x] LSP
-- [x] Autopairs
-- [x] Conform
-- [x] Which-key
-- [x] Tabout
-- [x] Blink-cmp
-- [x] Smear-cursor
+### Generic
 
-https://primamateria.github.io/blog/neovim-editions/#personal-story
+```bash
+nix build .#neovim.<build>
+```
+
+### Base
+
+```bash
+nix build .#neovim.base
+```
+
+### Web
+
+```bash
+nix build .#neovim.web
+```
