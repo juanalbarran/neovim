@@ -1,16 +1,15 @@
 -- src/packages/neovim/base/__config/lua/treesitter.lua
-require("nvim-treesitter").setup({})
-
-vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-	callback = function()
-		-- syntax highlighting, provided by Neovim
-		vim.treesitter.start()
-		-- folds, provided by Neovim
-		vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-		vim.wo.foldmethod = "expr"
-		-- indentation, provided by nvim-treesitter
-		vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
-	end,
+require("nvim-treesitter").setup({
+	auto_install = false,
+	sync_install = false,
+	highlight = {
+		enable = true,
+	},
+	indent = {
+		enable = true,
+	},
+	ensure_installed = {},
 })
 
-vim.api.nvim_set_option("foldenable", false)
+vim.api.nvim_set_option("foldenable", true)
+
