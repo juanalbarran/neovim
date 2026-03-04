@@ -4,7 +4,7 @@
 -- src/packages/neovim/base/__config/lua/colorscheme.lua
 require("vague").setup({
 	colors = {
-		bg = "#131314",
+		bg = "#131313",
 	},
 })
 -- 1. CONFIGURATION
@@ -13,7 +13,7 @@ local theme_file_path = vim.fn.expand("$HOME/.cache/style/mode")
 local uv = vim.uv or vim.loop -- Handles both new and old Neovim versions
 
 -- !!! CHANGE THESE TO YOUR INSTALLED THEMES !!!
-local DARK_THEME = "vague" --"tokyonight-moon" -- Example: "catppuccin", "vague", "gruvbox"
+local DARK_THEME = "vague"      --"tokyonight-moon" -- Example: "catppuccin", "vague", "gruvbox"
 local LIGHT_THEME = "alabaster" -- "onedark" -- Example: "alabaster", "dayfox", "rose-pine-dawn"
 
 -- 2. HELPER FUNCTIONS
