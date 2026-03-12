@@ -29,4 +29,5 @@
 in
   with pkgs; [
     apex-language-server
+    universal-ctags
   ]

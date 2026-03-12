@@ -4,4 +4,5 @@ with treesitterPlugins; [
   apex
   soql
   sosl
+  sflog
 ]

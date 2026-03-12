@@ -1,5 +1,5 @@
 -- src/packages/neovim/base/__config/lua/treesitter.lua
-require("nvim-treesitter").setup({
+require("nvim-treesitter.config").setup({
 	auto_install = false,
 	sync_install = false,
 	highlight = {
@@ -12,4 +12,3 @@ require("nvim-treesitter").setup({
 })
 
 vim.api.nvim_set_option("foldenable", true)
-

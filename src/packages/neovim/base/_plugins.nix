@@ -41,7 +41,4 @@ with root.packages.vimPlugins; [
 
   # Linting & formatting
   conform-nvim
-
-  # Treesitter
-  nvim-treesitter
 ]

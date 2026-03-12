@@ -6,4 +6,5 @@
 with pkgs.vimPlugins;
 with root.packages.vimPlugins; [
   sf-nvim
+  overseer-nvim
 ]
