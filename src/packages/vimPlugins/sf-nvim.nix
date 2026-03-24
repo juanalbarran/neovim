@@ -7,6 +7,6 @@ pkgs.vimUtils.buildVimPlugin {
     owner = "xixiaofinland";
     repo = "sf.nvim";
     rev = "master";
-    hash = "sha256-mW4jVOSOjML1S33cYzGAmunusKhwdTwzRldqEwagqRg=";
+    hash = "sha256-PuncPfbIlQh63FWZdInVxKE/KjMnZ+j0UTrvs1/dYEc=";
   };
 }
