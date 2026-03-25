@@ -6,7 +6,7 @@
     nixpkgs,
     utils,
     haumea,
-    neovimNigthlyOverlay,
+    # neovimNigthlyOverlay,
     neovim-nix-utils,
     ...
   }:
@@ -14,7 +14,8 @@
       pkgs = import nixpkgs {
         inherit system;
         config = {allowUnfree = true;};
-        overlays = [neovimNigthlyOverlay.overlays.default];
+        # overlays = [neovimNigthlyOverlay.overlays.default];
+        overlays = [];
       };
       neovimNixLib = neovim-nix-utils.lib.${system};
     in (haumea.lib.load {
@@ -33,10 +34,10 @@
       url = "github:nix-community/haumea";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    neovimNigthlyOverlay = {
-      url = "github:nix-community/neovim-nightly-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # neovimNigthlyOverlay = {
+    #   url = "github:nix-community/neovim-nightly-overlay";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
     neovim-nix-utils = {
       url = "github:PrimaMateria/neovim-nix-utils";
       inputs.nixpkgs.follows = "nixpkgs";

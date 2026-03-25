@@ -5,7 +5,7 @@
   neovimNixLib,
 }: let
   initializedNeovimNixLib = neovimNixLib.init {
-    neovimPackage = pkgs.neovim;
+    neovimPackage = pkgs.neovim-unwrapped;
     editionsDir = ./packages/neovim;
     editionsSet = root.packages.neovim;
     extraPackages = root.packages;
