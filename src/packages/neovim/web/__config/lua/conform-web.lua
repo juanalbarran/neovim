@@ -5,5 +5,4 @@ conform.formatters_by_ft = {
 	javascriptreact = { "eslint_d" },
 	typescript = { "eslint_d" },
 	typescriptreact = { "eslint_d" },
-	nix = { "alejandra", "nixfmt" },
 }
