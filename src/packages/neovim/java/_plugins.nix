@@ -5,8 +5,5 @@
 }:
 with pkgs.vimPlugins;
 with root.packages.vimPlugins; [
-  # LSP Plugin
-  nvim-java
-  spring-boot-nvim
   java-creator-nvim
 ]

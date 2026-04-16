@@ -6,6 +6,6 @@ pkgs.vimUtils.buildVimPlugin {
     owner = "alessio-vivaldelli";
     repo = "java-creator-nvim";
     rev = "main";
-    hash = "sha256-JkOWlqyVLcwW7hxOGj5jb8BpUge3bUHbSV0o5qOYW1c=";
+    hash = "sha256-aPSjvgB7UM9FchZCD+MRc6seWQnubYeSQJqvONwEKnI=";
   };
 }
