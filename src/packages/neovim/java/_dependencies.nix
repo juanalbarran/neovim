@@ -2,9 +2,8 @@
 {pkgs}:
 with pkgs; let
   jdtls-with-lombok = writeShellScriptBin "jdtls" ''
-    exec ${jdt-language-server}/bin/jdtls \
-      --jvm-arg=-javaagent:${lombok}/share/java/lombok.jar \
-      "$@"
+    export JDTLS_JVM_ARGS="-javaagent:${lombok}/share/java/lombok.jar"
+    exec ${jdt-language-server}/bin/jdtls "$@"
   '';
 in [
   jdtls-with-lombok
