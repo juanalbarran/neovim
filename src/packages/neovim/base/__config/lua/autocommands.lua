@@ -46,7 +46,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		end
 		-- Keybinds
 		-- Definition
-		vim.keymap.set("n", "gd,", fzf.lsp_definitions, desc("[G]o to [D]efinition"))
+		vim.keymap.set("n", "gd", fzf.lsp_definitions, desc("[G]o to [D]efinition"))
 		-- Type definition
 		vim.keymap.set("n", "gtd", fzf.lsp_typedefs, desc("[G]o to [T]ype [D]efinition"))
 		-- Declaration
@@ -61,7 +61,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		vim.keymap.set("n", "<leader>ca", fzf.lsp_code_actions, desc("[G]o to [C]ode [A]ction"))
 		-- Rename
 		vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, desc("[R]e[N]ame"))
-
+		-- Signature
+		vim.keymap.set("n", "<leader>sh", vim.lsp.buf.signature_help, desc("[S]ignature [H]elp"))
+		vim.keymap.set("i", "<C-k>", vim.lsp.buf.signature_help, desc("Signature Help"))
 		-- Toggle Inlay Hints
 		vim.keymap.set("n", "<leader>th", function()
 			local is_enabled = vim.lsp.inlay_hint.is_enabled({ bufnr = 0 })
@@ -98,4 +100,3 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		end
 	end,
 })
-
