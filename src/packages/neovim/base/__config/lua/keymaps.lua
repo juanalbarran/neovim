@@ -37,7 +37,7 @@ vim.keymap.set("n", "<c-h>", "<c-w><c-h>", opts)
 
 -- Buffer
 vim.keymap.set("n", "<leader>bd", "<cmd>bdelete<CR>", { noremap = true, silent = true, desc = "[B]uffer [D]elete." })
-vim.keymap.set("n", "<leader>bda", "<cmd>%bd<CR>" { noremap = true, silent = true, desc = "[B]uffer [D]elete [A]ll" })
+vim.keymap.set("n", "<leader>bda", "<cmd>%bd<CR>", { noremap = true, silent = true, desc = "[B]uffer [D]elete [A]ll" })
 
 -- Files
 vim.keymap.set(
