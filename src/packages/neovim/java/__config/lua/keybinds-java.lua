@@ -65,5 +65,21 @@ vim.api.nvim_create_autocmd("FileType", {
 			end),
 			{ buffer = bufnr, silent = true, desc = "[J]ava Extract [M]ethod" }
 		)
+
+		vim.keymap.set("n", "<leader>jgs", function()
+			vim.lsp.buf.code_action({ context = { only = { "source.generate.accessors" } }, apply = true })
+		end, { buffer = bufnr, silent = true, desc = "[J]ava [G]enerate [S]etters/Getters" })
+
+		vim.keymap.set("n", "<leader>jgc", function()
+			vim.lsp.buf.code_action({ context = { only = { "source.generate.constructors" } }, apply = true })
+		end, { buffer = bufnr, silent = true, desc = "[J]ava [G]enerate [C]onstructor" })
+
+		vim.keymap.set("n", "<leader>jgt", function()
+			vim.lsp.buf.code_action({ context = { only = { "source.generate.toString" } }, apply = true })
+		end, { buffer = bufnr, silent = true, desc = "[J]ava [G]enerate [T]oString" })
+
+		vim.keymap.set("n", "<leader>jgh", function()
+			vim.lsp.buf.code_action({ context = { only = { "source.generate.hashCodeEquals" } }, apply = true })
+		end, { buffer = bufnr, silent = true, desc = "[J]ava [G]enerate [H]ashCode/Equals" })
 	end,
 })
